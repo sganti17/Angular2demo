@@ -1,0 +1,57 @@
+<nav class="navbar navbar-inverse" style="padding:6px ;text-align: left" >
+  <button type="button" class="btn btn-primary"  (click)="goBackToProducts()">{{pageTitle}}</button> &nbsp;
+  <button type="button" class="btn btn-primary" [routerLink]="['/add-products']">Add Products</button>
+</nav>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-2">Filter by</div>
+      <div class="col-md-4">
+        <input type="text" [(ngModel)]="filterList" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Filtered by : {{filterList}} </h3>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table" *ngIf="products && products.length">
+        <thead>
+        <tr>
+          <th>
+            <button class="btn btn-primary" (click)="toggleImg()">
+              {{!showImage ? 'Show image':'Hide Image'}}
+            </button>
+          </th>
+          <th>Products</th>
+          <th>Code</th>
+          <th>Available</th>
+          <th>Price</th>
+          <th>5 Star rating</th> </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products | productFilter:filterList; let pId=index;">
+          <td>
+            <img *ngIf="showImage" [src]="product.imageUrl" [style.width.px]="imgWidth"/>
+          </td>
+          <td>
+            <a [routerLink]="['/products',pId]">
+            {{product.productName}}
+            </a>
+          </td>
+          <td>"{{product.productCode | uppercase}}"</td>
+          <td>"{{product.releaseDate }}"</td>
+          <td>"{{product.price | currency:'INR':true}}"</td>
+          <td><app-star [rating]="product.starRating"
+
+          (ratingClicked)="eventReceive($event)"></app-star></td>
+
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+

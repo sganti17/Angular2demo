@@ -1,0 +1,18 @@
+
+<div class="table-responsive">
+  <table class="table">
+    <tbody  *ngIf="products && products.length" >
+    <tr *ngFor="let product of products ">
+      <td>{{product.productName}}
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<button class="btn btn-primary" (click)="goBackToProducts()">
+  Back to product list
+</button>

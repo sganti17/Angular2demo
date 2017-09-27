@@ -1,0 +1,85 @@
+<nav class="navbar navbar-inverse" style="padding:6px ;text-align: left" >
+  <button type="button" class="btn btn-primary"  (click)="goBackToProducts()">Product_List</button> &nbsp;
+</nav>
+
+<form class="form-horizontal">
+  <fieldset>
+
+    <!-- Form Name -->
+    <legend>PRODUCTS</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="productId">PRODUCT ID</label>
+      <div class="col-md-4">
+        <input id="productId" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" [(ngModel)]="productId" required="" type="text">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="productName">PRODUCT NAME</label>
+      <div class="col-md-4">
+        <input id="productName" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" [(ngModel)]="productName" required="" type="text">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="productCode">PRODUCT CODE</label>
+      <div class="col-md-4">
+        <input id="productCode" name="product_code" placeholder="PRODUCT-CODE" class="form-control input-md" [(ngModel)]="productCode" required="" type="text">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="releaseDate">RELEASE DATE</label>
+      <div class="col-md-4">
+        <input id="releaseDate" name="release_date" placeholder="RELEASE DATE" class="form-control input-md" [(ngModel)]="releaseDate" required="" type="date">
+
+      </div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="description">PRODUCT DESCRIPTION</label>
+      <div class="col-md-4">
+        <textarea class="form-control" id="description" name="product_description" [(ngModel)]="description"></textarea>
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="price">PRICE</label>
+      <div class="col-md-4">
+        <input id="price" name="price" placeholder="PRICE" class="form-control input-md" [(ngModel)]="price"required="" type="text">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="starRating">STAR RATING</label>
+      <div class="col-md-4">
+        <input id="starRating" name="star_rating" placeholder="STAR RATING" class="form-control input-md" [(ngModel)]="starRating"required="" type="text">
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="imageUrl">IMAGE URL</label>
+      <div class="col-md-4">
+        <input id="imageUrl" name="image_url" placeholder="IMAGE URL" class="form-control input-md" [(ngModel)]="imageUrl"required="" type="text">
+      </div>
+      </div>
+  </fieldset>
+  <div class="form-group">
+    <button type="submit" name="submit" class="btn btn-primary" (click) ="register()">SUBMIT</button>
+      <a [routerLink]="['/products']" class="btn btn-link">Cancel</a>
+  </div>
+</form>
+
